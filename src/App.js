@@ -5,11 +5,20 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  function registerUser() {
+    fetch("http://localhost:5000/api/register", {
+      header: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
+  }
   return (
     <div className="p-10">
       <h1 className="text-xl font-bold my-10">Register</h1>
       <div>
-        <form>
+        <form onsu>
           <input
             className="my-3 py-2 px-5 rounded-sm bg-gray-300"
             type="text"
