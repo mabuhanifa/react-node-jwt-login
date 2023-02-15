@@ -9,7 +9,17 @@ function App() {
     <div>
       <h1 className="text-blue-500">Register</h1>
       <div>
-        <form></form>
+        <form>
+          <input 
+          type="text"
+           />
+          <input 
+          type="text"
+           />
+          <input 
+          type="text"
+           />
+        </form>
       </div>
     </div>
   );
