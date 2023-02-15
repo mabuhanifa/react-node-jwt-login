@@ -11,24 +11,29 @@ function App() {
       <div>
         <form>
           <input
-            className="my-10"
+            className="my-3 py-2 px-5 rounded-sm bg-gray-300"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <br />
           <input
-            className="my-10"
+            className="my-3 py-2 px-5 rounded-sm bg-gray-300"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <br />
           <input
-            className="my-10"
+            className="my-3 py-2 px-5 rounded-sm bg-gray-300"
             type="password"
-            value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <br />
+          <input
+            type="submit"
+            value="Register"
+            className="bg-indigo-700 px-10 py-3 text-white font-bold rounded-sm"
           />
         </form>
       </div>
