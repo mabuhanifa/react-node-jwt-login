@@ -35,7 +35,7 @@ export default function Login() {
           <br />
           <input
             type="submit"
-            value="Register"
+            value="Login"
             className="bg-indigo-700 px-10 py-3 text-white font-bold rounded-sm"
           />
         </form>
