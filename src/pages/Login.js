@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   async function logUser(e) {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/api/register", {
+    const res = await fetch("http://localhost:5000/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -13,6 +15,11 @@ export default function Login() {
       body: JSON.stringify({ email, password }),
     });
     const data = await res.json();
+    if (data.user) {
+      alert("Login successfully");
+    } else {
+      alert("Please check your email and password");
+    }
     console.log(data);
   }
   return (
@@ -40,6 +47,9 @@ export default function Login() {
           />
         </form>
       </div>
+      <h2 className="mt-10 text-blue-600">
+        Go to <Link to={"/register"}>Register Page</Link>
+      </h2>
     </div>
   );
 }
