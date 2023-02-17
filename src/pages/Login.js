@@ -16,7 +16,11 @@ export default function Login() {
     });
     const data = await res.json();
     if (data.user) {
+      localStorage.setItem("userToken", data.user);
+    }
+    if (data.user) {
       alert("Login successfully");
+      navigate("/dashboard");
     } else {
       alert("Please check your email and password");
     }
